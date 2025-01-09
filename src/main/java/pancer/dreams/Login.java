@@ -8,8 +8,8 @@ package pancer.dreams;
  *
  * @author Montse Caballero
  */
-public class MiPrimeraPagina extends javax.swing.JFrame {
-    public MiPrimeraPagina() {
+public class Login extends javax.swing.JFrame {
+    public Login() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH );
        // this.setLocationRelativeTo(null); //centrarlo en pantalla

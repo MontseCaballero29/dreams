@@ -11,6 +11,6 @@ package pancer.dreams;
 public class Dreams {
 
     public static void main(String[] args) {
-        new MiPrimeraPagina().setVisible(true);
+        new Login().setVisible(true);
     }
 }
