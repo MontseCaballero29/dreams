@@ -21,8 +21,8 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.obtenerRecentDreams();
-        
-        User user = Sesion.getUser();
+
+        User user = Sesion.obtenerObjetoCreado().getUser();
     }
 
     private void obtenerRecentDreams() {
@@ -31,24 +31,24 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         String fecha = "12/12/25";
         String categoria = "Raro";
         String[] tags = new String[]{"Carros", "Terror", "Accion"};
-        
-        JPanel recentCard = new RecentDreamCard(title, fecha, categoria, tags); 
+
+        JPanel recentCard = new RecentDreamCard(title, fecha, categoria, tags);
         recentDreamsPanel.add(recentCard);
-        
+
         String title1 = "Carro volando";
         String fecha1 = "12/12/25";
         String categoria1 = "Raro";
         String[] tags1 = new String[]{"Carros", "Terror", "Accion"};
-        
-        JPanel recentCard1 = new RecentDreamCard(title1, fecha1, categoria1, tags1); 
+
+        JPanel recentCard1 = new RecentDreamCard(title1, fecha1, categoria1, tags1);
         recentDreamsPanel.add(recentCard1);
-        
+
         String title2 = "Carro volando";
         String fecha2 = "12/12/25";
         String categoria2 = "Raro";
         String[] tags2 = new String[]{"Carros", "Terror", "Accion"};
-        
-        JPanel recentCard2 = new RecentDreamCard(title2, fecha2, categoria2, tags2); 
+
+        JPanel recentCard2 = new RecentDreamCard(title2, fecha2, categoria2, tags2);
         recentDreamsPanel.add(recentCard2);
     }
 

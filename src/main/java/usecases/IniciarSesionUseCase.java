@@ -30,6 +30,6 @@ public class IniciarSesionUseCase {
             throw new Exception("Password Incorrecto");
         }
         
-        Sesion.setUser(user);
+        Sesion.obtenerObjetoCreado().setUser(user);
     }
 }
