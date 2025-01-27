@@ -5,6 +5,8 @@
 package pancer.dreams;
 
 import javax.swing.JPanel;
+import models.Sesion;
+import models.User;
 
 /**
  *
@@ -19,11 +21,12 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.obtenerRecentDreams();
-
+        
+        User user = Sesion.getUser();
     }
 
     private void obtenerRecentDreams() {
-        // Buscar en la base de datos
+        // Buscar en el repositorio
         String title = "Carro volando";
         String fecha = "12/12/25";
         String categoria = "Raro";

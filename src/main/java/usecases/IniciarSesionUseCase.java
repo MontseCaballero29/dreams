@@ -1,6 +1,7 @@
 package usecases;
 
 import models.Encriptador;
+import models.Sesion;
 import models.User;
 import models.UserRepository;
 
@@ -28,5 +29,7 @@ public class IniciarSesionUseCase {
         if (!encriptador.desencriptar(user.getPassword()).equals(password)) {
             throw new Exception("Password Incorrecto");
         }
+        
+        Sesion.setUser(user);
     }
 }
