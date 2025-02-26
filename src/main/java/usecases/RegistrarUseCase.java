@@ -14,15 +14,17 @@ public class RegistrarUseCase {
         this.encriptador = encriptador;
     }
 
-    public void ejecutar(User user) throws Exception {
-        User existente = userRepository.obtenerUsuarioPorUsername(user.getUsername());
+    public void ejecutar(String username, String name, String password) throws Exception {
+        User existente = userRepository.findByUsername(username);
 
         if (existente != null) {
             throw new Exception("Username ya existe, elige otro");
         }
         
-        String passwordEncriptada = encriptador.encriptar(user.getPassword());
-        user.setPassword(passwordEncriptada);
+        String passwordEncriptada = encriptador.encriptar(password);
+       
+        User user = User.create(username, name, passwordEncriptada);
+        
         userRepository.agregar(user);
     }
 

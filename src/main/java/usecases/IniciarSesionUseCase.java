@@ -20,7 +20,7 @@ public class IniciarSesionUseCase {
     }
 
     private void validarCredencialesCorrectas(String username, String password) throws Exception {
-        User user = userRepository.obtenerUsuarioPorUsername(username);
+        User user = userRepository.findByUsername(username);
 
         if (user == null) {
             throw new Exception("Usuario no existe");

@@ -5,8 +5,6 @@
 package pancer.dreams;
 
 import javax.swing.JPanel;
-import models.Sesion;
-import models.User;
 
 /**
  *
@@ -22,7 +20,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         this.obtenerRecentDreams();
 
-        User user = Sesion.obtenerObjetoCreado().getUser();
+       
     }
 
     private void obtenerRecentDreams() {

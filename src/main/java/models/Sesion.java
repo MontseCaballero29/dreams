@@ -4,8 +4,9 @@ package models;
 public class Sesion {
 
     private static Sesion sesion;
-    
-    private Sesion(){}
+
+    private Sesion() {
+    }
 
     private User user;
 
@@ -21,7 +22,7 @@ public class Sesion {
         if (sesion == null) {
             sesion = new Sesion();
         }
-        
+
         return sesion;
     }
 }

@@ -4,7 +4,6 @@
  */
 package vistas;
 
-import models.User;
 import pancer.dreams.PaginaPrincipal;
 import usecases.RegistrarUseCase;
 
@@ -54,6 +53,11 @@ public class Register extends javax.swing.JFrame {
         jLabel2.setText("Ingresa tu clave");
 
         passwordField.setText("jPasswordField1");
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Crear cuenta");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +157,7 @@ public class Register extends javax.swing.JFrame {
         String password = String.valueOf(passwordField.getPassword());
 
         try {
-            registrarUseCase.ejecutar(new User(username, name, password));
+            registrarUseCase.ejecutar(username, name, password);
             redirigirAPaginaPrincipal();
         } catch (Exception e) {
             errorLabel.setText(e.getMessage());
@@ -163,6 +167,10 @@ public class Register extends javax.swing.JFrame {
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTextFieldActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     public void redirigirAPaginaPrincipal() {
         new PaginaPrincipal().setVisible(true);
